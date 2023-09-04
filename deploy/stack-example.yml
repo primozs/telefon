@@ -1,0 +1,34 @@
+version: "3.3"
+services:
+  meet-stenar-si:
+    image: registry.susa.cloud/meet-stenar-si:v0.0.1
+    environment:
+      TZ: Europe/Ljubljana
+    ports:
+      - 3053:3000
+    networks:
+      - traefik-public
+    logging:
+      driver: json-file
+    deploy:
+      labels:
+        traefik.http.routers.meet-stenar-si-https.tls: "true"
+        traefik.http.routers.meet-stenar-si-https.entrypoints: https
+        traefik.http.services.meet-stenar-si.loadbalancer.server.port: "3000"
+        traefik.http.routers.meet-stenar-si-https.tls.certresolver: le
+        traefik.http.routers.meet-stenar-si-https.rule: Host(`meet.stenar.si`)
+        traefik.http.routers.meet-stenar-si-http.rule: Host(`meet.stenar.si`)
+        traefik.constraint-label: traefik-public
+        traefik.http.routers.meet-stenar-si-http.entrypoints: http
+        traefik.docker.network: traefik-public
+        traefik.enable: "true"
+        traefik.http.routers.meet-stenar-si-http.middlewares: https-redirect
+      update_config:
+        delay: 10s
+        failure_action: rollback
+      restart_policy:
+        window: 120s
+        max_attempts: 3
+networks:
+  traefik-public:
+    external: true
