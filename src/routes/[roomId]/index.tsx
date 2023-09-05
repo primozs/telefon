@@ -6,7 +6,7 @@ import {
   useVisibleTask$,
   noSerialize,
 } from "@builder.io/qwik";
-import { type DocumentHead, routeLoader$, Link } from "@builder.io/qwik-city";
+import { type DocumentHead, routeLoader$ } from "@builder.io/qwik-city";
 import { type Socket, io } from "socket.io-client";
 import { IncomingCall } from "~/components/incoming-call";
 import { RoomHeader } from "~/components/room-header";
@@ -96,7 +96,7 @@ export const useRoomState = () => {
 
     peer.addEventListener("icecandidate", handleICECandidateEvent);
     peer.addEventListener("track", handleTrackEvent);
-    peer.addEventListener("negotiationneeded", (e) => {
+    peer.addEventListener("negotiationneeded", () => {
       handleNegotiationNeededEvent(userId);
     });
     return peer;

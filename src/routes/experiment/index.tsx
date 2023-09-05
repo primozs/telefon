@@ -24,10 +24,10 @@ export default component$(() => {
           pipWindow.document.head.appendChild(link);
 
           // Get screen and camera streams.
-          const screenStream = await navigator.mediaDevices.getDisplayMedia({
-            video: true,
-            audio: false,
-          });
+          // const screenStream = await navigator.mediaDevices.getDisplayMedia({
+          //   video: true,
+          //   audio: false,
+          // });
 
           // Use MediaStreamTrackProcess to consume screen frames.
           // const screenProcessor = new MediaStreamTrackProcessor({

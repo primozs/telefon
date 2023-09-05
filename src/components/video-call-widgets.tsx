@@ -5,7 +5,7 @@ import {
   useSignal,
   useVisibleTask$,
 } from "@builder.io/qwik";
-import { useRoomState } from "~/routes/[roomId]";
+import type { useRoomState } from "~/routes/[roomId]";
 
 type VideoCallWidgetsProps = {
   roomStateProps: ReturnType<typeof useRoomState>;

@@ -3,7 +3,7 @@ import { Themes } from "./themes";
 import { RemoteUsers } from "./remote-users";
 import { RoomInfo } from "./room-info";
 import { Link } from "@builder.io/qwik-city";
-import { useRoomState } from "~/routes/[roomId]";
+import type { useRoomState } from "~/routes/[roomId]";
 
 type RoomHeaderProps = {
   roomStateProps: ReturnType<typeof useRoomState>;

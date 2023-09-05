@@ -1,4 +1,4 @@
-import { type QRL, component$, $, useVisibleTask$ } from "@builder.io/qwik";
+import { type QRL, component$, useVisibleTask$ } from "@builder.io/qwik";
 
 type Props = {
   caller: string;
