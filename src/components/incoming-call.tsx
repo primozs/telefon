@@ -1,12 +1,22 @@
-import { type QRL, component$ } from "@builder.io/qwik";
+import { type QRL, component$, $, useVisibleTask$ } from "@builder.io/qwik";
 
 type Props = {
   caller: string;
   receiveCall$: QRL<() => void>;
   rejectCall$: QRL<() => void>;
 };
-export const IncommingCall = component$((props: Props) => {
+export const IncomingCall = component$((props: Props) => {
   const { caller, receiveCall$, rejectCall$ } = props;
+
+  useVisibleTask$(({ cleanup }) => {
+    const ring = new Audio("/sound/telephone-ring-04.mp3");
+    ring.play();
+
+    cleanup(() => {
+      ring.pause();
+      ring.remove();
+    });
+  });
 
   return (
     <div class="toast toast-end z-10">

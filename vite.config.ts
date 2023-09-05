@@ -14,7 +14,9 @@ const socketioServer: PluginOption = {
       io.on("connection", (socket) => {
         socket.on("join-room", async (roomID) => {
           socket.join(roomID);
-          const users = await io.in(roomID).allSockets();
+          const sockets = await io.in(roomID).fetchSockets();
+          const users = sockets.map((item) => item.id);
+
           socket.to(roomID).emit("user-joined", socket.id);
           socket.emit("users", [...users]);
         });

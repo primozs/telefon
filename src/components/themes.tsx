@@ -27,7 +27,7 @@ export const Themes = component$(() => {
 
   return (
     <details class="dropdown dropdown-end">
-      <summary class="m-1 btn btn-square btn-ghost">
+      <summary class="btn btn-circle relative">
         <iconify-icon
           width={24}
           height={24}

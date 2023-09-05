@@ -13,7 +13,7 @@ export const Video = component$(
       <div class="card rounded-md">
         <video
           ref={videoRef}
-          class="w-full h-full rounded-md"
+          class="w-full h-full rounded-md aspect-video bg-black"
           autoPlay
           playsInline
           controls={false}

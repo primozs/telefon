@@ -1,4 +1,6 @@
-# Qwik City App ⚡️
+# Telefon Qwik City App ⚡️
+
+fork of [qwik-meet](https://github.com/harshmangalam/qwik-meet)
 
 - [Qwik Docs](https://qwik.builder.io/)
 - [Discord](https://qwik.builder.io/chat)

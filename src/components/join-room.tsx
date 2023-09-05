@@ -1,4 +1,5 @@
 import { component$, useSignal } from "@builder.io/qwik";
+import { Link } from "@builder.io/qwik-city";
 
 export const JoinRoom = component$(() => {
   const roomId = useSignal("");
@@ -13,9 +14,9 @@ export const JoinRoom = component$(() => {
         bind:value={roomId}
       />
       {roomId.value && (
-        <a class="btn btn-info btn-square join-item" href={roomId.value}>
+        <Link class="btn btn-info btn-square join-item" href={roomId.value}>
           <iconify-icon width={24} height={24} icon="formkit:arrowright" />
-        </a>
+        </Link>
       )}
     </div>
   );

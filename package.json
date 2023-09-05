@@ -1,5 +1,5 @@
 {
-  "name": "my-qwik-basic-starter",
+  "name": "telefon",
   "description": "An open source video calling web app powered by qwikcity",
   "engines": {
     "node": ">=15.0.0"
