@@ -70,7 +70,7 @@ export const VideoCallWidgets = component$<VideoCallWidgetsProps>(
 
     return (
       <>
-        <div class="flex items-center justify-center space-x-2 fixed bottom-0 left-0 right-0 p-4">
+        <div class="flex items-center justify-center space-x-2 fixed bottom-20 left-0 right-0 p-4">
           {!store.isCallAccepted && store.isCalling && (
             <button
               class="btn btn-error btn-circle"
